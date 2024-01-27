@@ -14,10 +14,14 @@ class DisplayManager {
     set(width, height) {
       this.canvas.width = width;
       this.canvas.height = height;
+      this.height = height;
+      this.width = width;
     }
     
     fullScreen() {
       this.set(window.innerWidth, window.innerHeight);
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
     }
   
     update(loop) {
