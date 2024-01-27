@@ -3,7 +3,8 @@ import Game from "./library/Main.js";
 const game = new Game("canvas");
 game.display.fullScreen();
 game.display.setCaption("Game");
-
+game.display.set(400, 400);
+game.display.icon('./download.png')
 let running = true;
 let X = 200;
 let Y = 200;
@@ -37,12 +38,12 @@ function gameLoop() {
 
   game.screen.fill([255, 255, 255]);
   let circle = game.draw.circle(X, Y, 100, [0, 255, 0]);
-
+  let text = game.draw.text("Hello", 100, 100, 50, [0, 20, 0]);
   let rect = game.draw.rect(0, 0, 100, 100, [255, 0, 0]);
-  if (game.collision.check(circle, rect)) {
-    game.draw.text("Collision", 100, 100, [0, 0, 0]);
-  }  
 
+  if (game.collision.check(circle, text)) {
+    game.draw.text("Collision", 100, 100,20, [0, 0, 0]);
+  }
   if (!running) {
     game.quit();
   }
