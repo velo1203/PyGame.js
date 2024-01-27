@@ -4,6 +4,7 @@ import ScreenManager from "./ScreenManager/ScreenManager.js";
 import DrawManager from "./DrawManager/DrawManager.js";
 import ImageManager from "./ImageManager/ImageManager.js";
 import Collision from "./CollisionManager/CollisionManager.js";
+import SoudManager from "./SoundManager/SoundManager.js";
 
 class Game {
   constructor(canvasId) {
@@ -13,6 +14,7 @@ class Game {
     this.draw = new DrawManager(this.display.ctx);
     this.image = new ImageManager(this.display.ctx);
     this.collision = new Collision();
+    this.sound = new SoudManager();
   }
 
   quit() {

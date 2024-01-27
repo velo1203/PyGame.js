@@ -228,4 +228,24 @@ game.collision.check(circle, text); //check collision
 
 
 # **Game.Sound**
+```javascript
+game.sound.load("path"); //load sound
+```
+사운드를 불러옵니다. 인자로 사운드의 경로를 넣어줍니다.
+```javascript
+game.sound.load("path").play(); //play sound
+```
+사운드를 재생합니다. 
+```javascript
+game.sound.load("path").pause(); //pause sound
+```
+사운드를 일시정지합니다.
+```javascript
+game.sound.load("path").stop(); //stop sound
+```
+사운드를 정지합니다.
+```javascript
+game.sound.load("path").setVolume(0.5); //set volume
+```
+사운드의 볼륨을 설정합니다. 인자로 볼륨을 넣어줍니다. 볼륨은 0 ~ 1 사이의 값이어야 합니다.
 
