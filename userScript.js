@@ -10,8 +10,6 @@ let Y = 200;
 let radius = 40;
 let speed = 10;
 
-const image = game.image.loadImage('./download.png')
-
 function gameLoop() {
   game.event.getEvents().forEach((event) => {
     if (event.type === "Key_down") {
@@ -24,23 +22,26 @@ function gameLoop() {
       if (event.key === "ArrowLeft") {
         X -= speed;
       }
+      if (event.key === "ArrowUp") {
+        Y -= speed;
+      }
+      if (event.key === "ArrowDown") {
+        Y += speed;
+      }
     }
     if (event.type === "Mouse_down") {
-      if (event.button === 0) {
-        console.log(event.position.x, event.position.y)
-        game.screen.alert('안녕')
-      }
-      if (event.button === 2) {
-        radius -= 10;
-      }
+      console.log(event.position.x, event.position.y);
     }
-  });
+  }
+  );
 
   game.screen.fill([255, 255, 255]);
-  game.draw.circle(X, Y, radius, [0, 255, 0]);
-  game.draw.text("Hello World", 100, 100, [0, 0, 0]);
-  game.image.drawImage(image, 0, 0, 100, 100)
+  let circle = game.draw.circle(X, Y, 100, [0, 255, 0]);
 
+  let rect = game.draw.rect(0, 0, 100, 100, [255, 0, 0]);
+  if (game.collision.check(circle, rect)) {
+    game.draw.text("Collision", 100, 100, [0, 0, 0]);
+  }  
 
   if (!running) {
     game.quit();
