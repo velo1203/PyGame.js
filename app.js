@@ -1,6 +1,7 @@
 const game = new Game("canvas");
 
-game.display.set(500, 700);
+game.display.full_screen();
+game.display.set_caption("Game");
 
 let running = true;
 let X = 200;
@@ -20,34 +21,12 @@ function gameLoop() {
       if (event.key === "ArrowLeft") {
         X -= speed;
       }
-      if (event.key === "ArrowUp") {
-        Y -= speed;
-      }
-      if (event.key === "ArrowDown") {
-        Y += speed;
-      }
-      if (event.key === "a") {
-        radius += 10;
-        console.log("radius increased, radius: " + radius);
-      }
-      if (event.key === "s") {
-        radius -= 10;
-        console.log("radius decreased, radius: " + radius);
-      }
-      if (event.key === "d") {
-        speed += 10;
-        console.log("speed increased, speed: " + speed);
-      }
-      if (event.key === "f") {
-        speed -= 10;
-        console.log("speed decreased, speed: " + speed);
-      }
     }
   });
 
   game.screen.fill([255, 255, 255]);
   game.Draw.circle(X, Y, radius, [0, 255, 0]);
-
+  game.Draw.Text("Hello World", 100, 100, [0, 0, 0]);
   
   if (!running) {
     game.quit();
