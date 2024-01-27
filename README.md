@@ -153,7 +153,7 @@ game.draw.rect(0, 0, 100, 100, [255, 0, 0]);
 { x: { min: x, max: x + width }, y: { min: y, max: y + height } }
 ```
 위는 `Rect`의 범위값입니다.
-객체의 `충돌 감지`에 사용할 수 있습니다.
+객체의 `collision`에 사용할 수 있습니다.
 
 ---
 
@@ -169,7 +169,7 @@ game.draw.circle(100, 100, 50, [0, 0, 255]);
 { x: { min: x - radius, max: x + radius }, y: { min: y - radius, max: y + radius } }
 ```
 위는 `Circle`의 범위값입니다.
-객체의 `충돌 감지`에 사용할 수 있습니다.
+객체의 `collision`에 사용할 수 있습니다.
 
 
 ```javascript
@@ -184,7 +184,7 @@ game.draw.line(0, 0, 100, 100, [0, 255, 0]);
 { x: { min: x1, max: x2 }, y: { min: y1, max: y2 } };
 ```
 위는 `Line`의 범위값입니다.
-객체의 `충돌 감지`에 사용할 수 있습니다.
+객체의 `collision`에 사용할 수 있습니다.
 
 ---
     
@@ -200,7 +200,7 @@ game.draw.text("Hello World!", 0, 0, 20, [0, 0, 0]);
 { x: { min: x, max: x + text.length * size }, y: { min: y, max: y + size } }
 ```
 위는 `Text`의 범위값입니다.
-객체의 `충돌 감지`에 사용할 수 있습니다.
+객체의 `collision`에 사용할 수 있습니다.
 
 # **Game.Image**
 ```javascript
@@ -215,9 +215,17 @@ game.image.draw("path", x, y,width,height); //draw image
 # Utils
 # **Game.collision**
 ```javascript
-game.collision.check(obj1, obj2); //check collision
+let circle = game.draw.circle(X, Y, 100, [0, 255, 0]);
+let text = game.draw.text("Hello", 100, 100, 50, [0, 20, 0]);
+
+game.collision.check(circle, text); //check collision
 ```
 객체의 충돌을 감지합니다. 인자로 충돌을 감지할 객체를 넣어줍니다. 객체는 `Rect`, `Circle`, `Line`, `Text`가 될 수 있습니다.
+
+위 코드는 원과 텍스트의 충돌을 감지합니다.
+
+`return` : 충돌이 감지되면 `true`, 아니면 `false`를 반환합니다.
+
 
 # **Game.Sound**
 
