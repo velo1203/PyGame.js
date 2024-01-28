@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'), // 빌드 결과물 디렉토리
     filename: 'Arcan.js', // 빌드 파일 이름
-    library: 'Arcan', // 전역 변수로 노출될 라이브러리 이름
+    library: 'Game', // 전역 변수로 노출될 라이브러리 이름
     libraryTarget: 'umd', // 모듈 시스템 타겟
     globalObject: 'this'
   },
