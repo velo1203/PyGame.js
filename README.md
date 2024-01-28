@@ -9,9 +9,9 @@
 
 이 라이브러리를 만든 목적은 보다 더 쉽게 2D 게임을 웹 기반에서 만듣기 위함입니다.
 
-# **Installation
+# **Installation**
 ```html
-
+```
 ## 목차
 * [Getting started](#getting-started)
 * [Game.Display](#gamedisplay)
